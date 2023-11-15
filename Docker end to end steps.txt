@@ -1,0 +1,55 @@
+Installation of docker: (we can install in several ways) official doc: https://docs.docker.com/engine/install/ubuntu/
+
+Install using the convenience script
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh --dry-run
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+Executing docker install script, commit: 7cae5f8b0decc17d6571f9f52eb840fbc13b2737
+<...>
+
+Then.....
+
+Install pre-releases
+
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+
+
+
+After installation:
+
+Clone the repos with docker file: 
+
+https://github.com/ruthlessgang/shippingservice.git
+
+https://github.com/ruthlessgang/paymentservice
+
+https://github.com/ruthlessgang/currencyservice
+
+
+Use commands to build all in a image and push to Google container registry
+
+--> go to repo folder using cd
+--> sudo docker build .
+--> sudo docker images
+--> sudo docker tag image_id gcr.io/project_id/container registry name
+--> sudo docker push gcr.io/project_id/container registry name
+
+
+To know image id for repository use command line as - sudo docker images
+image id for shipping service - 2353f218ea86
+project id - divine-fuze-402420
+
+
+
+To list images use this command: docker images
+
+
+Issues:
+
+If you get any permission issue while pushing images try below command and configure permissions and then apply the same push command
+
+--> sudo gcloud auth configure-docker 
